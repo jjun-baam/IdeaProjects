@@ -5,11 +5,12 @@ import lombok.AccessLevel;
 import lombok.Getter;
 
 import lombok.NoArgsConstructor;
+import sample.cafekiosk.spring.domain.BaseEntity;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
-public class Product {
+public class Product extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,5 +23,9 @@ public class Product {
 
     @Enumerated(EnumType.STRING)
     private ProductSellingType sellingType;
+
+    private String name;
+
+    private int price;
 
 }
